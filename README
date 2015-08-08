@@ -1,0 +1,122 @@
+Boltek Emulation - Release v0.1.2 on 23/05/2011
+===============================================
+Link: http://code.google.com/p/stormforce/
+
+For license and copyright, please see the LICENSE file.
+
+
+Preface
+=======
+This emulator has been created to allow testing of your Boltek-based software without the need for the actual hardware.  Very useful if you only have one unit which is currently live.
+
+You require TWO serial ports AND a crossover (null modem) cable for this work correctly.  Put the emulator on one port and your software on the other port.
+
+You only need ONE external package to be installed - serial.  This is required.
+
+
+Notes
+=====
+v0.1.2 - 23rd May 2011
+^^^^^^^^^^^^^^^^^^^^^^
+1. Corrected serial code when running under Windows.  Windows doesn't like XONXOFF set to NULL so it's now set to FALSE.
+
+v0.1.1 - 22nd May 2011
+^^^^^^^^^^^^^^^^^^^^^^
+1. Boltek EFM-100 emulation.
+
+v0.1.0 - 21st May 2011
+^^^^^^^^^^^^^^^^^^^^^^
+1. Initial release, Boltek LD-250 emulation.
+
+v0.0.0 - 21st May 2011
+^^^^^^^^^^^^^^^^^^^^^^
+1. Development started.
+
+
+Usage
+=====
+On the command line: -
+
+% python efm100emu.py
+% python ld250emu.py
+
+
+Current Features
+================
+1. Emulates a Boltek LD-250 on a chosen serial port.
+2. Emulates a Boltek EFM-100 on a chosen serial port.
+
+
+Future Features
+===============
+1. Nothing planned.
+
+
+Installation
+============
+FreeBSD
+^^^^^^^
+Here are the packages I've currently got installed for emulation to work: -
+
+================================================================================================================================
+Name			|	Download From	|	Directory
+================+===================+===========================================================================================
+py26-serial		|	Ports			|	/usr/ports/comms/py-serial/
+python26		|	Ports			|	/usr/ports/lang/python/
+================================================================================================================================
+
+You can install them in any order, you might want to make sure the your ports collection is up-to-date.  Python 2.6 is normally installed by default so don't worry about that one.
+
+
+Linux - (X/K)Ubuntu/Debian
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enter the following commands in a terminal session: -
+
+sudo apt-get update
+sudo apt-get install python-serial
+
+Linux - CentOS
+^^^^^^^^^^^^^^
+yum install python python-game
+wget http://rpms.netmindz.net/el5/i386/RPMS.extras/pyserial-2.2-4.el5.noarch.rpm
+
+/usr/share/mc/extfs/rpm run /usr/local/src/pyserial-2.2-4.el5.noarch.rpm INSTALL
+
+Linux - Others
+^^^^^^^^^^^^^^
+TO DO.
+
+
+MacOS
+^^^^^
+Untested - But no problems are expected.
+
+
+Microsoft Windows
+^^^^^^^^^^^^^^^^^
+Install Python 2.6 (http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi) and pySerial (http://pypi.python.org/packages/any/p/pyserial/pyserial-2.5.win32.exe).
+
+
+FAQ
+===
+Q. What are the dependencies for this program?
+A. Python v2.6 or greater.  Modules used are datetime, os, serial*, sys, termios, threading, time, and xml.  * - External package which requires installing since it's not normally installed by default.
+
+Q. What operating systems does it support?
+A. I develop and test these emulators with FreeBSD 8.1, it should work in other POSIX compliant operating systems as well other distros of Linux.
+
+Q. Can I create (port) of Boltek Emulation?
+A. By all means! Be sure to read the LICENSE as your port will inherit the license.
+
+Q. I've found a bug! What do I do?
+A. Let me know by raising it as an issue so I can fix it in the next version.
+
+Q. I would like a feature that's not in the emulator...
+A. I'm currently not accepting feature requests.
+
+
+Legal
+=====
+I am in no way affiliated or in partnership with either Boltek, Google, NASA, Microsoft, or anyone else.
+
+<EOF>
